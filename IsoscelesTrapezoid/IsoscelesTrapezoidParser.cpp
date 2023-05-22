@@ -1,8 +1,8 @@
 #include "pch.h"
-#include "TrapezoidParser.h"
+#include "IsoscelesTrapezoidParser.h"
 
 
-IShape* TrapezoidParser::parse(std::stringstream data) noexcept(false)
+IShape* IsoscelesTrapezoidParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
     regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
@@ -51,7 +51,7 @@ IShape* TrapezoidParser::parse(std::stringstream data) noexcept(false)
             top = stof(buffer1);
             base = stof(buffer2);
             h = stof(buffer2);
-            result = new myTrapezoid::Trapezoid(top, base, h);
+            result = new myIsoscelesTrapezoid::IsoscelesTrapezoid(top, base, h);
         }
         catch (...) {
             return nullptr; 
