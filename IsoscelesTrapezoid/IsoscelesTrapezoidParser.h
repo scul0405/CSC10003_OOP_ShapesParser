@@ -1,9 +1,9 @@
 #pragma once
 #include "pch.h"
-#include "Trapezoid.h"
+#include "IsoscelesTrapezoid.h"
 
 extern "C" {
-	class TrapezoidParser :
+	class IsoscelesTrapezoidParser :
 		public IParser
 	{
 	public:

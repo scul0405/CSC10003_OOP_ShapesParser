@@ -21,13 +21,13 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Trapezoid.h">
+    <ClInclude Include="IsoscelesTrapezoid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TrapezoidParser.h">
+    <ClInclude Include="IsoscelesTrapezoidParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TrapezoidToStringConverter.h">
+    <ClInclude Include="IsoscelesTrapezoidToStringConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,13 +38,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Trapezoid.cpp">
+    <ClCompile Include="IsoscelesTrapezoid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TrapezoidParser.cpp">
+    <ClCompile Include="IsoscelesTrapezoidParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TrapezoidToStringConverter.cpp">
+    <ClCompile Include="IsoscelesTrapezoidToStringConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
