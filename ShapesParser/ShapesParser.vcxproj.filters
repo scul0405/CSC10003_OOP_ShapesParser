@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{f123408f-6f36-4814-9611-c09f3b5a08a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control">
+      <UniqueIdentifier>{d5e7a949-de42-4899-b64d-3aa62394a044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{fba13099-9958-4b76-8035-479ce7a5c0e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Model\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Control\Header Files">
+      <UniqueIdentifier>{bc57f246-6079-4d5c-80c6-acd3857a5699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Header Files">
+      <UniqueIdentifier>{373b36cf-3d77-45c9-9320-7c3cddcd8d6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\Source Files">
+      <UniqueIdentifier>{b5dffeae-8bcd-4f55-b5ae-30e4eca800c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Source Files">
+      <UniqueIdentifier>{fb30fa5b-117e-4571-9859-45a7b1fcc5b1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IShape.cpp">
+      <Filter>Model\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapesPrinter.cpp">
+      <Filter>View\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IShapeToStringConverter.cpp">
+      <Filter>Model\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IParser.cpp">
+      <Filter>Model\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParserFactory.cpp">
+      <Filter>Control\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConverterFactory.cpp">
+      <Filter>Control\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ShowTableDefault.cpp">
+      <Filter>View\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowTableCustom.cpp">
+      <Filter>View\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowDataDefault.cpp">
+      <Filter>View\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowDataCustom.cpp">
+      <Filter>View\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IShowDataBehavior.cpp">
+      <Filter>Model\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IShowTableBehavior.cpp">
+      <Filter>Model\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IShape.h">
+      <Filter>Model\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapesPrinter.h">
+      <Filter>View\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IShapeToStringConverter.h">
+      <Filter>Model\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IParser.h">
+      <Filter>Model\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParserFactory.h">
+      <Filter>Control\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConverterFactory.h">
+      <Filter>Control\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowTableDefault.h">
+      <Filter>View\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowTableCustom.h">
+      <Filter>View\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowDataDefault.h">
+      <Filter>View\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowDataCustom.h">
+      <Filter>View\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IShowDataBehavior.h">
+      <Filter>Model\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IShowTableBehavior.h">
+      <Filter>Model\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="shapes.txt" />
+  </ItemGroup>
+</Project>

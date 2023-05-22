@@ -1,0 +1,31 @@
+﻿Load main 
+-> main tìm kiếm các file dll hợp lệ 
+-> các dll chứa hàm getInstance phục vụ cho khai báo Factory và nhận biết
+-> đọc dữ liệu từ file
+-> lưu vào shapes
+-> nạp dữ liệu từ shape vào lớp printer
+-> lớp printer xuất ra màn hình
+----------------------------------------
+
+- ShapeParser: CHỨA HÀM MAIN VÀ CÁC INTERFACE, lớp printer và các factory
+- utils (thư viện liên kết tĩnh): CHỨA CÁC THƯ VIỆN CẦN INCLUDE 
+	(xem xét việc tác một số hàm từ main ra utils cũng ok)
+- Các lớp Circle, Square, ... sẽ là các project dưới dạng thư viện liên kết động
+
+Xây dựng:
+- Header gồm các Parser, Converter và đối tượng
+- Do sự trùng lặp tại một số hình (Rectangle, Square) nên compiler không phân biệt được
+  -> Tạo ra một namespace quản lí.
+- Các project Dll phải reference tới utils nhằm mục đích kế thừa từ các interface 
+	và không cần include nhiều lần (thể hiện qua file pch.h)
+- quá trình hoạt động:
+	+ đối tượng hình được tạo mới từ parser
+	+ đối tượng qua lớp Converter chia làm 4 phần gồm tên, info, chu vi, diện tích
+	+ đối tượng được in qua hàm main thông qua lớp printer
+- tại dllmain sẽ gồm hai hàm
+	+ getParserInstance(): trả ra một đối tượng hình tương ứng với file dll
+	+ getConverterInstance(): trả ra một converter tương ứng với file dll
+	Hai hàm này sẽ giúp hàm main nhận ra xem đây có là file dll chứa 
+	đối tượng hình học hay không
+
+	 
