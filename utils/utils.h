@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "pch.h"
 #include "framework.h"
@@ -35,6 +35,18 @@ using std::to_wstring;
 using std::sort;
 using std::unique_ptr, std::shared_ptr, std::make_unique, std::make_shared;
 
+/// <summary>
+/// SHAPE_DATA là một tập dữ liệu lưu trữ 4 trường:
+///		- Tên hình
+///		- Thông tin của hình
+///		- Chu vi hình
+///		- Diện tích hình
+/// </summary>
 typedef tuple<wstring, wstring, wstring, wstring> SHAPE_DATA;
 
 const double PI = 3.1415;
+
+/// <summary> 
+///		DOUBLE_PATTERN dùng để kiểm tra một số có phải là số thực không
+/// </summary>
+const regex DOUBLE_PATTERN("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");

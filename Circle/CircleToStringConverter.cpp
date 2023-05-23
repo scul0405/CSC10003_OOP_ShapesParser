@@ -3,7 +3,7 @@
 
 SHAPE_DATA CircleToStringConverter::convert(IShape* shape)
 {
-	Circle* circle = dynamic_cast<Circle*>(shape);
+	myCircle::Circle* circle = dynamic_cast<myCircle::Circle*>(shape);
 	if (circle != nullptr) {
 		wstringstream* builder = new wstringstream;
 

@@ -13,7 +13,7 @@ IsoscelesTrapezoidParser* IsoscelesTrapezoidParser::getInstance()
 IShape* IsoscelesTrapezoidParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
-    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    
 
     if (data.str() == "") {
         return nullptr;
@@ -49,9 +49,9 @@ IShape* IsoscelesTrapezoidParser::parse(std::stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer1, doublePattern)
-            || !regex_match(buffer2, doublePattern)
-            || !regex_match(buffer3, doublePattern)) {
+            || !regex_match(buffer1, DOUBLE_PATTERN)
+            || !regex_match(buffer2, DOUBLE_PATTERN)
+            || !regex_match(buffer3, DOUBLE_PATTERN)) {
             return nullptr;
         }
 

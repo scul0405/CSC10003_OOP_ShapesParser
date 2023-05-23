@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 extern "C" {
 	namespace myIsoscelesTrapezoid {
+		/// <summary>
+		/// Lớp IsoscelesTrapezoid kế thừa từ interface IShape lưu thông tin hình thang cân
+		/// </summary>
 		class IsoscelesTrapezoid :
 			public IShape
 		{

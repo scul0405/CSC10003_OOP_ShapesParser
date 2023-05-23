@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "Rectangle.h"
 
 extern "C" {
+	/// <summary>
+	/// Lớp RectangleParser kế thừa từ interface IParser thực hiện việc phân tích hình chữ nhật
+	/// </summary>
 	class RectangleParser :
 		public IParser
 	{

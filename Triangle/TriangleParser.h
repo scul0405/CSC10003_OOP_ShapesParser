@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "Triangle.h"
 
 extern "C" {
+	/// <summary>
+	/// Lớp TriangleParser kế thừa từ interface IParser thực hiện việc phân tích hình tam giác
+	/// </summary>
 	class TriangleParser :
 		public IParser
 	{
