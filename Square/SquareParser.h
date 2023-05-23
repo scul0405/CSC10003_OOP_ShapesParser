@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "Square.h"
 
 extern "C" {
+	/// <summary>
+	/// Lớp SquareParser kế thừa từ interface IParser thực hiện việc phân tích hình vuông
+	/// </summary>
 	class SquareParser :
 		public IParser
 	{

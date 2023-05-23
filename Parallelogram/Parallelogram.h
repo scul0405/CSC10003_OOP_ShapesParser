@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 extern "C" {
 	namespace myParallelogram {
+		/// <summary>
+		/// Lớp Parallelogram kế thừa từ interface IShape lưu thông tin hình bình hành
+		/// </summary>
 		class Parallelogram :
 			public IShape
 		{

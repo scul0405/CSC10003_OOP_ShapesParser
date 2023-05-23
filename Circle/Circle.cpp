@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Circle.h"
 
-Circle::Circle(double R) noexcept(false)
+myCircle::Circle::Circle(double R) noexcept(false)
 {
     if (R <= 0) {
         throw exception("Radius of a circle cannot be negative or zero.");
@@ -11,22 +11,22 @@ Circle::Circle(double R) noexcept(false)
     }
 }
 
-double Circle::area()
+double myCircle::Circle::area()
 {
     return (3.14 * _radius * _radius);
 }
 
-double Circle::perimeter()
+double myCircle::Circle::perimeter()
 {
     return (2 * _radius * 3.14);
 }
 
-string Circle::toString()
+string myCircle::Circle::toString()
 {
     return "Circle";
 }
 
-double Circle::radius()
+double myCircle::Circle::radius()
 {
 
     return (_radius);

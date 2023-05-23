@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "Parallelogram.h"
 
 extern "C" {
+	/// <summary>
+	/// Lớp ParallelogramParser kế thừa từ interface IParser thực hiện việc phân tích hình bình hành
+	/// </summary>
 	class ParallelogramParser :
 		public IParser
 	{

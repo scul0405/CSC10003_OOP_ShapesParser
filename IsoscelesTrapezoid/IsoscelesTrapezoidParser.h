@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "IsoscelesTrapezoid.h"
 
 extern "C" {
+	/// <summary>
+	/// Lớp IsoscelesTrapezoidParser kế thừa từ interface IParser thực hiện việc phân tích hình thang cân
+	/// </summary>
 	class IsoscelesTrapezoidParser :
 		public IParser
 	{

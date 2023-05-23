@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 extern "C" {
 	namespace myEllipse {
+		/// <summary>
+		/// Lớp Ellipse kế thừa từ interface IShape lưu thông tin hình e-líp
+		/// </summary>
 		class Ellipse :
 			public IShape
 		{

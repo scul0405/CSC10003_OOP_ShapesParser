@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 extern "C" {
 	namespace myRhombus {
+		/// <summary>
+		/// Lớp Circle kế thừa từ interface IShape lưu thông tin hình thoi
+		/// </summary>
 		class Rhombus :
 			public IShape
 		{

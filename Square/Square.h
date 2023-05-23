@@ -1,10 +1,11 @@
 ﻿#pragma once
 #include "pch.h"
 
-// Lớp Square nằm trong namespace mySquare
-// cái extern C là chuẩn viết dll của nó
 extern "C" {
     namespace mySquare {
+        /// <summary>
+        /// Lớp Square kế thừa từ interface IShape lưu thông tin hình vuông
+        /// </summary>
         class Square :
             public IShape
         {
