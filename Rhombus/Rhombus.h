@@ -6,15 +6,15 @@ extern "C" {
 		class Rhombus :
 			public IShape
 		{
-			float _short_diagonal;
-			float _long_diagonal;
+			double _short_diagonal;
+			double _long_diagonal;
 		public:
-			Rhombus(float, float) noexcept(false);
-			float area() override;
-			float perimeter() override;
+			Rhombus(double, double) noexcept(false);
+			double area() override;
+			double perimeter() override;
 			string toString() override;
-			float short_diagonal();
-			float long_diagonal();
+			double short_diagonal();
+			double long_diagonal();
 		};
 	};
 }

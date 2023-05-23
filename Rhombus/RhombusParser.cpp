@@ -2,17 +2,25 @@
 #include "RhombusParser.h"
 
 
+RhombusParser* RhombusParser::getInstance()
+{
+    if (!_instance) {
+        _instance = new RhombusParser();
+    }
+    return _instance;
+}
+
 IShape* RhombusParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
-    regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
 
     if (data.str() == "") {
         return nullptr;
     }
     else {
-        float short_diagonal;
-        float long_diagonal;
+        double short_diagonal;
+        double long_diagonal;
 
         string first;
         string buffer1;
@@ -32,8 +40,8 @@ IShape* RhombusParser::parse(std::stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer1, floatPattern)
-            || !regex_match(buffer2, floatPattern)) {
+            || !regex_match(buffer1, doublePattern)
+            || !regex_match(buffer2, doublePattern)) {
             return nullptr;
         }
 
@@ -48,4 +56,9 @@ IShape* RhombusParser::parse(std::stringstream data) noexcept(false)
     }
 
     return result;
+}
+
+string RhombusParser::toString()
+{
+    return "RhombusParser";
 }

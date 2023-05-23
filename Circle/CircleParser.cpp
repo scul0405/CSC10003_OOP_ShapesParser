@@ -1,9 +1,17 @@
 ﻿#include "pch.h"
 #include "CircleParser.h"
 
+CircleParser* CircleParser::getInstance()
+{
+    if (!_instance) {
+        _instance = new CircleParser();
+    }
+    return _instance;
+}
+
 IShape* CircleParser::parse(stringstream data) noexcept(false)
 {
-    regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
     IShape* result = nullptr;
 
     if (data.str() == "") {
@@ -11,7 +19,7 @@ IShape* CircleParser::parse(stringstream data) noexcept(false)
     }
     else {
         string first;
-        float radius;
+        double radius;
         getline(data, first, ',');
         stringstream first_ss(first);
         string buffer;
@@ -22,7 +30,7 @@ IShape* CircleParser::parse(stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer, floatPattern)) {
+            || !regex_match(buffer, doublePattern)) {
             return nullptr;
         }
 
@@ -36,4 +44,9 @@ IShape* CircleParser::parse(stringstream data) noexcept(false)
     }
 
     return result;
+}
+
+string CircleParser::toString()
+{
+    return "CircleParser";
 }

@@ -8,13 +8,13 @@ extern "C" {
         class Square :
             public IShape
         {
-            float _length;
+            double _length;
         public:
-            Square(float) noexcept(false);
-            float area() override;
-            float perimeter() override;
+            Square(double) noexcept(false);
+            double area() override;
+            double perimeter() override;
             std::string toString() override;
-            float length();
+            double length();
         };
     };
 }

@@ -2,18 +2,26 @@
 #include "TriangleParser.h"
 
 
+TriangleParser* TriangleParser::getInstance()
+{
+    if (!_instance) {
+        _instance = new TriangleParser();
+    }
+    return _instance;
+}
+
 IShape* TriangleParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
-    regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
 
     if (data.str() == "") {
         return nullptr;
     }
     else {
-        float e1;
-        float e2;
-        float e3;
+        double e1;
+        double e2;
+        double e3;
 
         string first;
         string buffer1;
@@ -40,9 +48,9 @@ IShape* TriangleParser::parse(std::stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer1, floatPattern)
-            || !regex_match(buffer2, floatPattern)
-            || !regex_match(buffer3, floatPattern)) {
+            || !regex_match(buffer1, doublePattern)
+            || !regex_match(buffer2, doublePattern)
+            || !regex_match(buffer3, doublePattern)) {
             return nullptr;
         }
 
@@ -58,4 +66,9 @@ IShape* TriangleParser::parse(std::stringstream data) noexcept(false)
     }
 
     return result;
+}
+
+string TriangleParser::toString()
+{
+    return "TriangleParser";
 }

@@ -134,6 +134,7 @@
     <ClInclude Include="IShapeToStringConverter.h" />
     <ClInclude Include="IShowDataBehavior.h" />
     <ClInclude Include="IShowTableBehavior.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="ParserFactory.h" />
     <ClInclude Include="ShapesPrinter.h" />
     <ClInclude Include="ShowDataCustom.h" />
@@ -149,6 +150,7 @@
     <ClCompile Include="IShowDataBehavior.cpp" />
     <ClCompile Include="IShowTableBehavior.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="ParserFactory.cpp" />
     <ClCompile Include="ShapesPrinter.cpp" />
     <ClCompile Include="ShowDataCustom.cpp" />

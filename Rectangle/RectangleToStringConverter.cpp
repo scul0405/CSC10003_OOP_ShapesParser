@@ -31,3 +31,8 @@ SHAPE_DATA RectangleToStringConverter::convert(IShape* shape)
 	SHAPE_DATA result = { shapeName, attributes, perimeter, area };
 	return result;
 }
+
+string RectangleToStringConverter::toString()
+{
+	return "RectangleToStringConverter";
+}

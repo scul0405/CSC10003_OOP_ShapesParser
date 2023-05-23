@@ -1,11 +1,11 @@
 #pragma once
+#include "Object.h"
 #include "../utils/utils.h"
 
-class IShape
+class IShape : public Object
 {
 public:
-	virtual float area() = 0;
-	virtual float perimeter() = 0;
-	virtual string toString() = 0;
+	virtual double area() = 0;
+	virtual double perimeter() = 0;
 };
 
