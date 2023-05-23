@@ -11,7 +11,7 @@ CircleParser* CircleParser::getInstance()
 
 IShape* CircleParser::parse(stringstream data) noexcept(false)
 {
-    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    
     IShape* result = nullptr;
 
     if (data.str() == "") {
@@ -30,13 +30,13 @@ IShape* CircleParser::parse(stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer, doublePattern)) {
+            || !regex_match(buffer, DOUBLE_PATTERN)) {
             return nullptr;
         }
 
         try {
-            radius = stof(buffer);          // Lỗi không chuyển được
-            result = new Circle(radius);    // Lỗi khởi tạo
+            radius = stof(buffer);
+            result = new myCircle::Circle(radius);
         }
         catch (...) {
             return nullptr;

@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 extern "C" {
 	namespace myTriangle {
+		/// <summary>
+		/// Lớp Triangle kế thừa từ interface IShape lưu thông tin hình tam giác
+		/// </summary>
 		class Triangle :
 			public IShape
 		{

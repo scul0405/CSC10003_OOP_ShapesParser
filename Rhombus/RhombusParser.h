@@ -1,8 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "Rhombus.h"
 
 extern "C" {
+	/// <summary>
+	/// Lớp RhombusParser kế thừa từ interface IParser thực hiện việc phân tích hình thoi
+	/// </summary>
 	class RhombusParser :
 		public IParser
 	{
