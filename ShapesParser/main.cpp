@@ -9,46 +9,97 @@
 #include "ShowTableCustom.h"
 #include "ShowDataCustom.h"
 
-// Fuction Prototypes
+/// <summary>
+/// Hàm với chức năng cài đặt xuất chữ tiếng việt trên console
+/// </summary>
 void setMode();
+
+/// <summary>
+/// Hàm với chức năng đọc file text
+/// </summary>
+/// <param name="textFile"> Tên của file text </param> 
+/// <param name="count"> Số lượng đối tượng hình được khai báo trong file </param> 
+/// <param name="shapes"> Vector lưu trữ các đối tượng hình </param>
+/// <param name="parser_factory"> Lựa chọn khởi tạo đối tượng qua việc parse </param>
 void readFile(wstring textFile, int& count, vector<shared_ptr<IShape>>& shapes, ParserFactory& parser_factory);
+
+/// <summary>
+/// Hàm với chức năng sắp xếp tăng dần các đối tượng theo diện tích
+/// </summary>
+/// <param name="shapes"> Vector chứa các đối tượng cần sắp xếp</param>
 void sortWithLambdaExpression(vector<shared_ptr<IShape>>& shapes);
+
+/// <summary>
+/// Hàm với chức năng nạp các đối tượng IShape sang đối tượng Printer để in ra màn hình
+/// </summary>
+/// <param name="printer">Đối tượng phụ trách việc in ra màn hình</param>
+/// <param name="shapes">Vector chứa các đối tượng hình</param>
+/// <param name="converter_factory">Lựa chọn khởi tạo đối tượng qua converter</param>
 void loadShapesToPrinter(ShapesPrinter& printer, vector<shared_ptr<IShape>>& shapes, ConverterFactory& converter_factory);
+
+/// <summary>
+/// Hàm với chức năng thực hiện việc cài đặt kiểu in ra màn hình
+/// </summary>
+/// <param name="printer">Đối tượng phụ trách việc in ra màn hình</param>
+/// <param name="showDataBehavior">Kiểu in dữ liệu</param>
+/// <param name="showTableBehavior">Kiểu in bảng</param>
 void setCustomPrinter(ShapesPrinter& printer, IShowDataBehavior*& showDataBehavior, IShowTableBehavior*& showTableBehavior);
+
+/// <summary>
+/// Hàm phụ trách việc in ra màn hình
+/// </summary>
+/// <param name="printer">Đối tượng phụ trách việc in ra màn hình</param>
+/// <param name="shapes">Vector chứa các đối tượng hình</param>
+/// <param name="count">Số lượng đối tượng hình được khai báo trong file</param>
 void printToScreen(ShapesPrinter& printer, vector<shared_ptr<IShape>>& shapes, int count);
 
 int main() {
-	// Initial
+	// Khởi tạo đối tượng phụ trách việc in ra màn hình
 	ShapesPrinter printer;
+
+	// Khởi tạo đối tượng phụ trách việc lựa chọn khởi tạo qua việc parse
 	ParserFactory parser_factory;
+
+	// Khởi tạo đối tượng phụ trách việc lựa chọn khởi tạo qua converter
 	ConverterFactory converter_factory;
+
+	// Khởi tạo vector lưu trữ các đối tượng hình trong file
 	vector<shared_ptr<IShape>> shapes;
+
+	// Tên của file text cần đọc
 	wstring textFile = L"shapes.txt";
+
+	// Khởi tạo biến lưu trữ số các đối tượng có mặt trong file
 	int count = 0;
 
-	// Custom printer
+	// Khởi tạo các đối tượng là các phương thức để in ra màn hình
 	IShowDataBehavior* showDataBehavior = new ShowDataCustom;
 	IShowTableBehavior* showTableBehavior = new ShowTableCustom;
 	
-	// DLL Initial
+	// Định nghĩa lại các con trỏ hàm
 	typedef IShapeToStringConverter* (__cdecl* FN_SHAPE_CONVERTER)();
 	typedef IParser* (__cdecl* FN_SHAPE_PARSER)();
 
 	FN_SHAPE_PARSER fn_parser = nullptr;
 	FN_SHAPE_CONVERTER fn_converter = nullptr;
-	vector<std::filesystem::path> dll_files; // mảng này lưu đường dẫn các file dll
 
+	// vector lưu trữ đường dẫn của các file .dll
+	vector<std::filesystem::path> dll_files; 
+
+	// Đường dẫn hiện thời tới file .exe sau khi build
 	const std::filesystem::path path_obj = std::filesystem::current_path();
+
+	// NHỚ XÓA CÁI NÀY TRƯỚC KHI NỘP VÀ ĐỔI Ở VÒNG FOR BÊN DƯỚI NHÉ
 	const std::filesystem::path path_obj1("../x64/Debug");
 
+	// Vector lưu trữ các file .dll đã mở thành công
 	vector<shared_ptr<void>> hLibs;
 
-	/* lưu lại các con trỏ handle*/
+	// lưu lại các con trỏ handle
 	vector<shared_ptr<IParser>> parser_ptrs;
 	vector<shared_ptr<IShapeToStringConverter>> converter_ptrs;
 
-	// Load dll
-	//  Load cac file DLL va luu vao mang
+	// Load các file .dll và lưu vào mảng
 	for (const auto& entry : std::filesystem::directory_iterator(path_obj1)) {
 		if (entry.path().extension() == ".dll") {
 			dll_files.push_back(entry.path());
@@ -129,7 +180,7 @@ void readFile(wstring textFile, int& count, vector<shared_ptr<IShape>>& shapes, 
 	if (ifs) {
 		wcout << L"Đang đọc tệp tin " << textFile << L"..." << endl;
 		getline(ifs, line);
-		line = regex_replace(line, space, ""); // dòng này để xóa hết khoảng trắng
+		line = regex_replace(line, space, "");
 		count = stoi(line);
 
 		for (int i = 0; i < count; i++) {
@@ -154,7 +205,7 @@ void readFile(wstring textFile, int& count, vector<shared_ptr<IShape>>& shapes, 
 					}
 				}
 				catch (...) {
-					// ko can in cai gi het
+					// eat exception
 					continue;
 				}
 			}
