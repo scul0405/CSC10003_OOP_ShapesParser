@@ -73,6 +73,9 @@
     <ClCompile Include="IShowTableBehavior.cpp">
       <Filter>Model\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Model\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IShape.h">
@@ -109,6 +112,9 @@
       <Filter>Model\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IShowTableBehavior.h">
+      <Filter>Model\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
       <Filter>Model\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

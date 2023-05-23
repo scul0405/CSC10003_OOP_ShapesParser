@@ -8,6 +8,7 @@ extern "C" {
 	{
 	public:
 		SHAPE_DATA convert(IShape*) override;
+		string toString() override;
 	};
 }
 

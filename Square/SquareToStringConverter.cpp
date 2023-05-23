@@ -34,3 +34,8 @@ SHAPE_DATA SquareToStringConverter::convert(IShape* shape)
 	SHAPE_DATA result = { shapeName, attributes, perimeter, area };
 	return result;
 }
+
+string SquareToStringConverter::toString()
+{
+	return "SquareToStringConverter";
+}

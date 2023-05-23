@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Parallelogram.h"
 
-myParallelogram::Parallelogram::Parallelogram(float side, float base, float height)
+myParallelogram::Parallelogram::Parallelogram(double side, double base, double height)
 {
     if (side < 0) {
         throw exception("The side of a parallelogram cannot be negative or zero.");
@@ -20,12 +20,12 @@ myParallelogram::Parallelogram::Parallelogram(float side, float base, float heig
     _height = height;
 }
 
-float myParallelogram::Parallelogram::area()
+double myParallelogram::Parallelogram::area()
 {
     return (_base * _height);
 }
 
-float myParallelogram::Parallelogram::perimeter()
+double myParallelogram::Parallelogram::perimeter()
 {
     return (2 * (_side + _base));
 }
@@ -35,17 +35,17 @@ string myParallelogram::Parallelogram::toString()
     return "Parallelogram";
 }
 
-float myParallelogram::Parallelogram::side()
+double myParallelogram::Parallelogram::side()
 {
     return (_side);
 }
 
-float myParallelogram::Parallelogram::base()
+double myParallelogram::Parallelogram::base()
 {
     return (_base);
 }
 
-float myParallelogram::Parallelogram::height()
+double myParallelogram::Parallelogram::height()
 {
     return (_height);
 }

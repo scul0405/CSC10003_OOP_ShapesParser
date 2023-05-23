@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Rectangle.h"
 
-myRectangle::Rectangle::Rectangle(float width, float height)
+myRectangle::Rectangle::Rectangle(double width, double height)
 {
     if (width < 0) {
         throw exception("The width of a rectangle cannot be negative or zero.");
@@ -15,12 +15,12 @@ myRectangle::Rectangle::Rectangle(float width, float height)
     }
 }
 
-float myRectangle::Rectangle::area()
+double myRectangle::Rectangle::area()
 {
     return (_width * _height);
 }
 
-float myRectangle::Rectangle::perimeter()
+double myRectangle::Rectangle::perimeter()
 {
     return (2 * (_height + _width));
 }
@@ -30,12 +30,12 @@ string myRectangle::Rectangle::toString()
     return "Rectangle";
 }
 
-float myRectangle::Rectangle::width()
+double myRectangle::Rectangle::width()
 {
     return (_width);
 }
 
-float myRectangle::Rectangle::height()
+double myRectangle::Rectangle::height()
 {
     return (_height);
 }

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Triangle.h"
 
-myTriangle::Triangle::Triangle(float firstEgde, float secondEdge, float thirdEdge)
+myTriangle::Triangle::Triangle(double firstEgde, double secondEdge, double thirdEdge)
 {
     if (firstEgde < 0) {
         throw exception("The edge of a triangle cannot be negative or zero.");
@@ -24,13 +24,13 @@ myTriangle::Triangle::Triangle(float firstEgde, float secondEdge, float thirdEdg
     _thirdEgde = thirdEdge;
 }
 
-float myTriangle::Triangle::area()
+double myTriangle::Triangle::area()
 {
-    float p = (_firstEgde + _secondEgde + _thirdEgde) / 2;
+    double p = (_firstEgde + _secondEgde + _thirdEgde) / 2;
     return sqrt(p*(p - _firstEgde)*(p - _secondEgde)*(p - _thirdEgde));
 }
 
-float myTriangle::Triangle::perimeter()
+double myTriangle::Triangle::perimeter()
 {
     return (_firstEgde + _secondEgde + _thirdEgde);
 }
@@ -40,17 +40,17 @@ string myTriangle::Triangle::toString()
     return "Triangle";
 }
 
-float myTriangle::Triangle::firstEgde()
+double myTriangle::Triangle::firstEgde()
 {
     return (_firstEgde);
 }
 
-float myTriangle::Triangle::secondEgde()
+double myTriangle::Triangle::secondEgde()
 {
     return (_secondEgde);
 }
 
-float myTriangle::Triangle::thirdEgde()
+double myTriangle::Triangle::thirdEgde()
 {
     return (_thirdEgde);
 }

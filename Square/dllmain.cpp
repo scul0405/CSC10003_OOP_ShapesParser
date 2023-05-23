@@ -9,7 +9,7 @@
 // Hai hàm dùng để lấy ra các đối tượng tương ứng của từng file dll
 extern "C" {
 	__declspec(dllexport) IParser* __stdcall getParserInstance() {
-		IParser* result = new SquareParser();
+		IParser* result = SquareParser::getInstance();
 		return result;
 	}
 

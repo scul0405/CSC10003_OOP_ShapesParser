@@ -6,15 +6,15 @@ extern "C" {
 		class Rectangle :
 			public IShape
 		{
-			float _width;
-			float _height;
+			double _width;
+			double _height;
 		public:
-			Rectangle(float, float) noexcept(false);
-			float area() override;
-			float perimeter() override;
+			Rectangle(double, double) noexcept(false);
+			double area() override;
+			double perimeter() override;
 			string toString() override;
-			float width();
-			float height();
+			double width();
+			double height();
 		};
 	};
 }

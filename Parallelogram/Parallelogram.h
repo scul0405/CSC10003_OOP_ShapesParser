@@ -6,17 +6,17 @@ extern "C" {
 		class Parallelogram :
 			public IShape
 		{
-			float _side;
-			float _base;
-			float _height;
+			double _side;
+			double _base;
+			double _height;
 		public:
-			Parallelogram(float, float, float) noexcept(false);
-			float area() override;
-			float perimeter() override;
+			Parallelogram(double, double, double) noexcept(false);
+			double area() override;
+			double perimeter() override;
 			string toString() override;
-			float side();
-			float base();
-			float height();
+			double side();
+			double base();
+			double height();
 		};
 	};
 }

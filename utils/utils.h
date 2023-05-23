@@ -37,4 +37,4 @@ using std::unique_ptr, std::shared_ptr, std::make_unique, std::make_shared;
 
 typedef tuple<wstring, wstring, wstring, wstring> SHAPE_DATA;
 
-const float PI = 3.1415;
+const double PI = 3.1415;

@@ -43,6 +43,10 @@ int main() {
 
 	vector<shared_ptr<void>> hLibs;
 
+	/* lưu lại các con trỏ handle*/
+	vector<shared_ptr<IParser>> parser_ptrs;
+	vector<shared_ptr<IShapeToStringConverter>> converter_ptrs;
+
 	// Load dll
 	//  Load cac file DLL va luu vao mang
 	for (const auto& entry : std::filesystem::directory_iterator(path_obj1)) {
@@ -69,17 +73,21 @@ int main() {
 			fn_parser = (FN_SHAPE_PARSER)GetProcAddress(hDll, "getParserInstance");
 			fn_converter = (FN_SHAPE_CONVERTER)GetProcAddress(hDll, "getConverterInstance");
 
-			// Kiểm tra điều kiện để khai báo
+			/* Kiểm tra điều kiện để khai báo*/
 			if (fn_parser != NULL) {
-				IParser* instance = fn_parser();
+				auto instance = fn_parser();
 				string shapeName = dll_path.filename().stem().string();
-				parser_factory.registerWith(shapeName, instance);
+				shared_ptr<IParser> parser_ptr(instance);
+				parser_ptrs.push_back(parser_ptr);
+				parser_factory.registerWith(shapeName, parser_ptr.get());
 			}
 
 			if (fn_converter != NULL) {
-				IShapeToStringConverter* instance = fn_converter();
+				auto instance = fn_converter();
 				string shapeName = dll_path.filename().stem().string();
-				converter_factory.registerWith(shapeName, instance);
+				shared_ptr<IShapeToStringConverter> converter_ptr(instance);
+				converter_ptrs.push_back(converter_ptr);
+				converter_factory.registerWith(shapeName, converter_ptr.get());
 			}
 		}
 
@@ -100,6 +108,11 @@ int main() {
 
 	// End
 	system("pause");
+	parser_ptrs.clear();
+	converter_ptrs.clear();
+	shapes.clear();
+	hLibs.clear();
+
 	return 0;
 }
 

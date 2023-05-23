@@ -1,17 +1,25 @@
 ﻿#include "pch.h"
 #include "SquareParser.h"
 
+SquareParser* SquareParser::getInstance()
+{
+    if (!_instance) {
+        _instance = new SquareParser();
+    }
+    return _instance;
+}
+
 IShape* SquareParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
-    regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
 
     if (data.str() == "") {
         return nullptr;
     }
     else {
         string first;
-        float len;
+        double len;
 
         getline(data, first, ',');
         stringstream first_ss(first);
@@ -26,9 +34,9 @@ IShape* SquareParser::parse(std::stringstream data) noexcept(false)
         // Kiểm tra điều kiện:
         // Nếu vẫn còn thông tin dư. VD: Square: a = 10, (phần dư)
         // Nếu sau đó chỉ còn lại dấu ','. VD: Square: a = 10,
-        // Nếu số không đúng định dạng float
+        // Nếu số không đúng định dạng double
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer, floatPattern)) {
+            || !regex_match(buffer, doublePattern)) {
             return nullptr;
         }
 
@@ -44,4 +52,9 @@ IShape* SquareParser::parse(std::stringstream data) noexcept(false)
     }
 
     return result;
+}
+
+string SquareParser::toString()
+{
+    return "SquareParser";
 }

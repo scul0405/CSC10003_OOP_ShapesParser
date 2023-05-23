@@ -8,7 +8,7 @@
 
 extern "C" {
 	__declspec(dllexport) IParser* __stdcall getParserInstance() {
-		IParser* result = new RectangleParser();
+		IParser* result = RectangleParser::getInstance();
 		return result;
 	}
 

@@ -2,18 +2,26 @@
 #include "ParallelogramParser.h"
 
 
+ParallelogramParser* ParallelogramParser::getInstance()
+{
+    if (!_instance) {
+        _instance = new ParallelogramParser();
+    }
+    return _instance;
+}
+
 IShape* ParallelogramParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
-    regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
 
     if (data.str() == "") {
         return nullptr;
     }
     else {
-        float s;
-        float b;
-        float h;
+        double s;
+        double b;
+        double h;
 
         string first;
         string buffer1;
@@ -40,9 +48,9 @@ IShape* ParallelogramParser::parse(std::stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer1, floatPattern)
-            || !regex_match(buffer2, floatPattern)
-            || !regex_match(buffer3, floatPattern)) {
+            || !regex_match(buffer1, doublePattern)
+            || !regex_match(buffer2, doublePattern)
+            || !regex_match(buffer3, doublePattern)) {
             return nullptr;
         }
 
@@ -58,4 +66,9 @@ IShape* ParallelogramParser::parse(std::stringstream data) noexcept(false)
     }
 
     return result;
+}
+
+string ParallelogramParser::toString()
+{
+    return "ParallelogramParser";
 }

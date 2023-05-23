@@ -6,17 +6,17 @@ extern "C" {
 		class Triangle :
 			public IShape
 		{
-			float _firstEgde;
-			float _secondEgde;
-			float _thirdEgde;
+			double _firstEgde;
+			double _secondEgde;
+			double _thirdEgde;
 		public:
-			Triangle(float, float, float) noexcept(false);
-			float area() override;
-			float perimeter() override;
+			Triangle(double, double, double) noexcept(false);
+			double area() override;
+			double perimeter() override;
 			string toString() override;
-			float firstEgde();
-			float secondEgde();
-			float thirdEgde();
+			double firstEgde();
+			double secondEgde();
+			double thirdEgde();
 		};
 	};
 }
