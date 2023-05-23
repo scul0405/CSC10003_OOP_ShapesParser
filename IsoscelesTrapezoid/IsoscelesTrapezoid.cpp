@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "IsoscelesTrapezoid.h"
 
-myIsoscelesTrapezoid::IsoscelesTrapezoid::IsoscelesTrapezoid(float top, float base, float height)
+myIsoscelesTrapezoid::IsoscelesTrapezoid::IsoscelesTrapezoid(double top, double base, double height)
 {
     if (top < 0) {
         throw exception("The top of an isosceles trapezoid cannot be negative or zero.");
@@ -20,12 +20,12 @@ myIsoscelesTrapezoid::IsoscelesTrapezoid::IsoscelesTrapezoid(float top, float ba
     _height = height;
 }
 
-float myIsoscelesTrapezoid::IsoscelesTrapezoid::area()
+double myIsoscelesTrapezoid::IsoscelesTrapezoid::area()
 {
     return (((_top + _base) * _height) / 2);
 }
 
-float myIsoscelesTrapezoid::IsoscelesTrapezoid::perimeter()
+double myIsoscelesTrapezoid::IsoscelesTrapezoid::perimeter()
 {
     return 2*sqrt(pow((_base - _top) / 2, 2) + pow(_height, 2)) + _top + _base;
 }
@@ -35,17 +35,17 @@ string myIsoscelesTrapezoid::IsoscelesTrapezoid::toString()
     return "IsoscelesTrapezoid";
 }
 
-float myIsoscelesTrapezoid::IsoscelesTrapezoid::top()
+double myIsoscelesTrapezoid::IsoscelesTrapezoid::top()
 {
     return (_top);
 }
 
-float myIsoscelesTrapezoid::IsoscelesTrapezoid::base()
+double myIsoscelesTrapezoid::IsoscelesTrapezoid::base()
 {
     return (_base);
 }
 
-float myIsoscelesTrapezoid::IsoscelesTrapezoid::height()
+double myIsoscelesTrapezoid::IsoscelesTrapezoid::height()
 {
     return (_height);
 }

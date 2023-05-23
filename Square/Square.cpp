@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Square.h"
 
-mySquare::Square::Square(float len)
+mySquare::Square::Square(double len)
 {
 	if (len <= 0) {
 		throw std::exception("Length of the side of a square cannot be negative or zero");
@@ -11,12 +11,12 @@ mySquare::Square::Square(float len)
 	}
 }
 
-float mySquare::Square::area()
+double mySquare::Square::area()
 {
 	return (_length * _length);
 }
 
-float mySquare::Square::perimeter()
+double mySquare::Square::perimeter()
 {
 	return (4 * _length);
 }
@@ -27,7 +27,7 @@ string mySquare::Square::toString()
 }
 
 
-float mySquare::Square::length()
+double mySquare::Square::length()
 {
 	return (_length);
 }

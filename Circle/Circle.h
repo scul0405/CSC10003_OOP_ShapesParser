@@ -5,13 +5,13 @@ extern "C" {
 	class Circle : 
 		public IShape
 	{
-		float _radius;
+		double _radius;
 	public:
-		Circle(float) noexcept(false);
-		float area() override;
-		float perimeter() override;
+		Circle(double) noexcept(false);
+		double area() override;
+		double perimeter() override;
 		string toString() override;
-		float radius();
+		double radius();
 	};
 }
 

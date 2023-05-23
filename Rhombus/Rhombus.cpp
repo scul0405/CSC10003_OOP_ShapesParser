@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Rhombus.h"
 
-myRhombus::Rhombus::Rhombus(float short_diagonal, float long_diagonal)
+myRhombus::Rhombus::Rhombus(double short_diagonal, double long_diagonal)
 {
     if (short_diagonal < 0) {
         throw exception("The short diagonal of a rhombus cannot be negative or zero.");
@@ -15,14 +15,14 @@ myRhombus::Rhombus::Rhombus(float short_diagonal, float long_diagonal)
     }
 }
 
-float myRhombus::Rhombus::area()
+double myRhombus::Rhombus::area()
 {
     return (_short_diagonal * _long_diagonal);
 }
 
-float myRhombus::Rhombus::perimeter()
+double myRhombus::Rhombus::perimeter()
 {
-    float edge = sqrt(pow(_short_diagonal, 2) + pow(_long_diagonal, 2)) / 2;
+    double edge = sqrt(pow(_short_diagonal, 2) + pow(_long_diagonal, 2)) / 2;
     return (4 * edge);
 }
 
@@ -31,12 +31,12 @@ string myRhombus::Rhombus::toString()
     return "Rhombus";
 }
 
-float myRhombus::Rhombus::short_diagonal()
+double myRhombus::Rhombus::short_diagonal()
 {
     return (_short_diagonal);
 }
 
-float myRhombus::Rhombus::long_diagonal()
+double myRhombus::Rhombus::long_diagonal()
 {
     return (_long_diagonal);
 }

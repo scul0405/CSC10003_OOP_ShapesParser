@@ -6,8 +6,17 @@ extern "C" {
 	class RectangleParser :
 		public IParser
 	{
+	private:
+		inline static RectangleParser* _instance = nullptr;
+
+		RectangleParser() = default;
+		~RectangleParser() = default;
+		RectangleParser(const RectangleParser&) = delete;
+		RectangleParser& operator=(const RectangleParser&) = delete;
 	public:
+		static RectangleParser* getInstance();
 		IShape* parse(stringstream data) noexcept(false) override;
+		string toString() override;
 	};
 }
 

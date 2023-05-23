@@ -2,18 +2,26 @@
 #include "IsoscelesTrapezoidParser.h"
 
 
+IsoscelesTrapezoidParser* IsoscelesTrapezoidParser::getInstance()
+{
+    if (!_instance) {
+        _instance = new IsoscelesTrapezoidParser();
+    }
+    return _instance;
+}
+
 IShape* IsoscelesTrapezoidParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
-    regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
 
     if (data.str() == "") {
         return nullptr;
     }
     else {
-        float top;
-        float base;
-        float h;
+        double top;
+        double base;
+        double h;
 
         string first;
         string buffer1;
@@ -41,9 +49,9 @@ IShape* IsoscelesTrapezoidParser::parse(std::stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer1, floatPattern)
-            || !regex_match(buffer2, floatPattern)
-            || !regex_match(buffer3, floatPattern)) {
+            || !regex_match(buffer1, doublePattern)
+            || !regex_match(buffer2, doublePattern)
+            || !regex_match(buffer3, doublePattern)) {
             return nullptr;
         }
 
@@ -59,4 +67,9 @@ IShape* IsoscelesTrapezoidParser::parse(std::stringstream data) noexcept(false)
     }
 
     return result;
+}
+
+string IsoscelesTrapezoidParser::toString()
+{
+    return "IsoscelesTrapezoidParser";
 }

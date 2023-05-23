@@ -32,3 +32,8 @@ SHAPE_DATA TriangleToStringConverter::convert(IShape* shape)
 	SHAPE_DATA result = { shapeName, attributes, perimeter, area };
 	return result;
 }
+
+string TriangleToStringConverter::toString()
+{
+	return "TriangleToStringConverter";
+}

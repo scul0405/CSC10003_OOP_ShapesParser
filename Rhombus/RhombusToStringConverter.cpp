@@ -31,3 +31,8 @@ SHAPE_DATA RhombusToStringConverter::convert(IShape* shape)
 	SHAPE_DATA result = { shapeName, attributes, perimeter, area };
 	return result;
 }
+
+string RhombusToStringConverter::toString()
+{
+	return "RhombusToStringConverter";
+}

@@ -4,29 +4,36 @@
 SHAPE_DATA CircleToStringConverter::convert(IShape* shape)
 {
 	Circle* circle = dynamic_cast<Circle*>(shape);
-	wstringstream* builder = new wstringstream;
+	if (circle != nullptr) {
+		wstringstream* builder = new wstringstream;
 
-	wstring shapeName = L"Hình tròn";
+		wstring shapeName = L"Hình tròn";
 
-	*builder << L"Bán kính=" << circle->radius();
-	wstring attributes(builder->str());
+		*builder << L"Bán kính=" << circle->radius();
+		wstring attributes(builder->str());
 
-	//reset 
-	delete builder;
-	builder = new wstringstream;
+		//reset 
+		delete builder;
+		builder = new wstringstream;
 
-	*builder << L"Diện tích=" 
-		<< fixed << setprecision(2) << circle->area();
-	wstring area(builder->str());
+		*builder << L"Diện tích="
+			<< fixed << setprecision(2) << circle->area();
+		wstring area(builder->str());
 
-	//reset 
-	delete builder;
-	builder = new wstringstream;
+		//reset 
+		delete builder;
+		builder = new wstringstream;
 
-	*builder << L"Chu vi=" 
-		<< fixed << setprecision(1) << circle->perimeter();
-	wstring perimeter(builder->str());
+		*builder << L"Chu vi="
+			<< fixed << setprecision(1) << circle->perimeter();
+		wstring perimeter(builder->str());
 
-	SHAPE_DATA result = { shapeName, attributes, perimeter, area };
-	return result;
+		SHAPE_DATA result = { shapeName, attributes, perimeter, area };
+		return result;
+	}
+}
+
+string CircleToStringConverter::toString()
+{
+	return "CircleToStringConverter";
 }

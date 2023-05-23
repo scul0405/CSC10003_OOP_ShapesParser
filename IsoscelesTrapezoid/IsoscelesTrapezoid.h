@@ -6,17 +6,17 @@ extern "C" {
 		class IsoscelesTrapezoid :
 			public IShape
 		{
-			float _top;
-			float _base;
-			float _height;
+			double _top;
+			double _base;
+			double _height;
 		public:
-			IsoscelesTrapezoid(float, float, float) noexcept(false);
-			float area() override;
-			float perimeter() override;
+			IsoscelesTrapezoid(double, double, double) noexcept(false);
+			double area() override;
+			double perimeter() override;
 			string toString() override;
-			float top();
-			float base();
-			float height();
+			double top();
+			double base();
+			double height();
 		};
 	};
 }

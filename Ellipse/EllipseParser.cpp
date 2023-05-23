@@ -2,17 +2,25 @@
 #include "EllipseParser.h"
 
 
+EllipseParser* EllipseParser::getInstance()
+{
+    if (!_instance) {
+        _instance = new EllipseParser();
+    }
+    return _instance;
+}
+
 IShape* EllipseParser::parse(std::stringstream data) noexcept(false)
 {
     IShape* result = nullptr;
-    regex floatPattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
+    regex doublePattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");
 
     if (data.str() == "") {
         return nullptr;
     }
     else {
-        float semi_minor_axis;
-        float semi_major_axis;
+        double semi_minor_axis;
+        double semi_major_axis;
 
         string first;
         string buffer1;
@@ -32,8 +40,8 @@ IShape* EllipseParser::parse(std::stringstream data) noexcept(false)
         getline(data, end);
 
         if (end != "" || *(--data.str().end()) == ','
-            || !regex_match(buffer1, floatPattern)
-            || !regex_match(buffer2, floatPattern)) {
+            || !regex_match(buffer1, doublePattern)
+            || !regex_match(buffer2, doublePattern)) {
             return nullptr;
         }
 
@@ -48,4 +56,9 @@ IShape* EllipseParser::parse(std::stringstream data) noexcept(false)
     }
 
     return result;
+}
+
+string EllipseParser::toString()
+{
+    return "EllipseParser";
 }

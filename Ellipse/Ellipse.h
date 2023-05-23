@@ -6,15 +6,15 @@ extern "C" {
 		class Ellipse :
 			public IShape
 		{
-			float _semi_minor_axis;
-			float _semi_major_axis;
+			double _semi_minor_axis;
+			double _semi_major_axis;
 		public:
-			Ellipse(float, float) noexcept(false);
-			float area() override;
-			float perimeter() override;
+			Ellipse(double, double) noexcept(false);
+			double area() override;
+			double perimeter() override;
 			string toString() override;
-			float semi_minor_axis();
-			float semi_major_axis();
+			double semi_minor_axis();
+			double semi_major_axis();
 		};
 	};
 }
