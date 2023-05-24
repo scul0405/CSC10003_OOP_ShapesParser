@@ -5,11 +5,12 @@
 #include "IShowDataBehavior.h"
 #include "ShowTableDefault.h"
 #include "ShowDataDefault.h"
+#include "Object.h"
 
 /// <summary>
 /// Lớp phụ trách việc in ra màn hình
 /// </summary>
-class ShapesPrinter
+class ShapesPrinter : public Object
 {
 	/// <summary>
 	/// vector lưu trữ các thông tin của các hình
@@ -72,5 +73,7 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	vector<SHAPE_DATA> getData();
+
+	string toString() override;
 };
 

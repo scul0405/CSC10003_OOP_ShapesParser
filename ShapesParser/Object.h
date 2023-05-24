@@ -7,5 +7,9 @@
 class Object
 {
 public:
+	/// <summary>
+	/// Hàm trả về chuỗi biểu diễn cho đối tượng
+	/// </summary>
+	/// <returns></returns>
 	virtual string toString() = 0;
 };

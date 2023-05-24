@@ -15,3 +15,8 @@ IShapeToStringConverter* ConverterFactory::select(string type)
 
     return converter;
 }
+
+string ConverterFactory::toString()
+{
+    return "ConverterFactory";
+}

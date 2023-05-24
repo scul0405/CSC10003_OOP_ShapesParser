@@ -14,3 +14,8 @@ void ShowDataCustom::showData(vector<SHAPE_DATA> data)
 		wcout << builder.str() << endl;
 	}
 }
+
+string ShowDataCustom::toString()
+{
+	return "ShowDataCustom";
+}

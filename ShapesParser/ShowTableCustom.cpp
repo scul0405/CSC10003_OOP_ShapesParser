@@ -33,3 +33,8 @@ void ShowTableCustom::showTable(vector<SHAPE_DATA> data)
 		wcout << builder.str() << endl;
 	}
 }
+
+string ShowTableCustom::toString()
+{
+	return "ShowTableCustom";
+}
