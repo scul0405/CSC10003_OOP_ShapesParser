@@ -33,3 +33,8 @@ void ShowTableDefault::showTable(vector<SHAPE_DATA> data)
 		wcout << builder.str() << endl;
 	}
 }
+
+string ShowTableDefault::toString()
+{
+	return "ShowTableDefault";
+}

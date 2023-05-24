@@ -14,3 +14,8 @@ void ShowDataDefault::showData(vector<SHAPE_DATA> data)
 		wcout << builder.str() << endl;
 	}
 }
+
+string ShowDataDefault::toString()
+{
+	return "ShowDataDefault";
+}

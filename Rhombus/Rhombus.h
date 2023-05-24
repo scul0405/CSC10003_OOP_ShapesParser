@@ -4,7 +4,7 @@
 extern "C" {
 	namespace myRhombus {
 		/// <summary>
-		/// Lớp Circle kế thừa từ interface IShape lưu thông tin hình thoi
+		/// Lớp Rhombus kế thừa từ interface IShape lưu thông tin hình thoi
 		/// </summary>
 		class Rhombus :
 			public IShape

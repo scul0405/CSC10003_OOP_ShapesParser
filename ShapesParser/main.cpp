@@ -9,6 +9,14 @@
 #include "ShowTableCustom.h"
 #include "ShowDataCustom.h"
 
+/**
+ * @mainpage ĐỒ ÁN CUỐI KÌ MÔN LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG
+ *
+ * 21120353: Vi Lý Duy Trường \n
+ * 21120432: Vũ Tiến Đạt
+ */
+
+
 /// <summary>
 /// Hàm với chức năng cài đặt xuất chữ tiếng việt trên console
 /// </summary>
