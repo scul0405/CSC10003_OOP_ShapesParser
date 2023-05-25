@@ -15,3 +15,8 @@ IParser* ParserFactory::select(string type)
 
     return parser;
 }
+
+string ParserFactory::toString()
+{
+    return "ParserFactory";
+}

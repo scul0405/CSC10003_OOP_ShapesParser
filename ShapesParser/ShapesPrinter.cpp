@@ -43,4 +43,9 @@ vector<SHAPE_DATA> ShapesPrinter::getData()
 	return _data;
 }
 
+string ShapesPrinter::toString()
+{
+	return "ShapesPrinter";
+}
+
 
