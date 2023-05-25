@@ -4,7 +4,7 @@
 extern "C" {
 	namespace myParallelogram {
 		/// <summary>
-		/// Lớp Parallelogram kế thừa từ interface IShape lưu thông tin hình bình hành
+		/// Class Parallelogram inherits from interface IShape and save information about a parallelogram
 		/// </summary>
 		class Parallelogram :
 			public IShape

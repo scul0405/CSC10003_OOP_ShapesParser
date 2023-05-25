@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp ParallelogramParser kế thừa từ interface IParser thực hiện việc phân tích hình bình hành
+	/// Class ParallelogramParser inherits from interface IParser and performs parsing for a parallelogram
 	/// </summary>
 	class ParallelogramParser :
 		public IParser

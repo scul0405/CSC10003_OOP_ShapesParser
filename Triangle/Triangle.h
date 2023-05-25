@@ -4,7 +4,7 @@
 extern "C" {
 	namespace myTriangle {
 		/// <summary>
-		/// Lớp Triangle kế thừa từ interface IShape lưu thông tin hình tam giác
+		/// Class Triangle inherits from interface IShape and save information about a triangle
 		/// </summary>
 		class Triangle :
 			public IShape

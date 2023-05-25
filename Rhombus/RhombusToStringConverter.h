@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp RhombusToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình thoi sang tập dữ liệu
+	/// Class RhombusToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting a rhombus information to a tuple.
 	/// </summary>
 	class RhombusToStringConverter :
 		public IShapeToStringConverter

@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp EllipseParser kế thừa từ interface IParser thực hiện việc phân tích hình e-líp
+	/// Class EllipseParser inherits from interface IParser and performs parsing for an ellipse
 	/// </summary>
 	class EllipseParser :
 		public IParser

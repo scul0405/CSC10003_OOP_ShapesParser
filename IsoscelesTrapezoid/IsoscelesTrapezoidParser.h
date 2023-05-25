@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp IsoscelesTrapezoidParser kế thừa từ interface IParser thực hiện việc phân tích hình thang cân
+	/// Class IsoscelesTrapezoidParser inherits from interface IParser and performs parsing for an isosceles trapezoid
 	/// </summary>
 	class IsoscelesTrapezoidParser :
 		public IParser

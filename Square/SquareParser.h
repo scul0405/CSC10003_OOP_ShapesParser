@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp SquareParser kế thừa từ interface IParser thực hiện việc phân tích hình vuông
+	/// Class SquareParser inherits from interface IParser and performs parsing for a square
 	/// </summary>
 	class SquareParser :
 		public IParser

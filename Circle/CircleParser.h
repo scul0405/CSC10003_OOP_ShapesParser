@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp CircleParser kế thừa từ interface IParser thực hiện việc phân tích hình tròn
+	/// Class CircleParser inherits from interface IParser and performs parsing for a circle
 	/// </summary>
 	class CircleParser :
 		public IParser

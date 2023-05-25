@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp RectangleParser kế thừa từ interface IParser thực hiện việc phân tích hình chữ nhật
+	/// Class RectangleParser inherits from interface IParser and performs parsing for a rectangle
 	/// </summary>
 	class RectangleParser :
 		public IParser

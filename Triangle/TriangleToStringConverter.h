@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp TriangleToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình tam giác sang tập dữ liệu
+	/// Class TriangleToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting a triangle information to a tuple.
 	/// </summary>
 	class TriangleToStringConverter :
 		public IShapeToStringConverter

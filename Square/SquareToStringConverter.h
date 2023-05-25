@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp SquareToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình vuông sang tập dữ liệu
+	/// Class SquareToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting a square information to a tuple.
 	/// </summary>
 	class SquareToStringConverter :
 		public IShapeToStringConverter

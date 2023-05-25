@@ -4,7 +4,7 @@
 extern "C" {
 	namespace myRectangle {
 		/// <summary>
-		/// Lớp Rectangle kế thừa từ interface IShape lưu thông tin hình chữ nhật
+		/// Class Rectangle inherits from interface IShape and save information about a rectangle
 		/// </summary>
 		class Rectangle :
 			public IShape

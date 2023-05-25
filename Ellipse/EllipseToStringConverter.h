@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp EllipseToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình e-líp sang tập dữ liệu
+	/// Class EllipseToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting an ellipse information to a tuple.
 	/// </summary>
 	class EllipseToStringConverter :
 		public IShapeToStringConverter

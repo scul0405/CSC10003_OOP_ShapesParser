@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp RectangleToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình chữ nhật sang tập dữ liệu
+	/// Class RectangleToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting a rectangle information to a tuple.
 	/// </summary>
 	class RectangleToStringConverter :
 		public IShapeToStringConverter
