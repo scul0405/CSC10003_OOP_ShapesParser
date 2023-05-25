@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp ParallelogramToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình bình hành sang tập dữ liệu
+	/// Class ParallelogramToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting a parallelogram information to a tuple.
 	/// </summary>
 	class ParallelogramToStringConverter :
 		public IShapeToStringConverter

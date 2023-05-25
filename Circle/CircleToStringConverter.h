@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp CircleToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình tròn sang tập dữ liệu
+	/// Class CircleToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting a circle information to a tuple.
 	/// </summary>
 	class CircleToStringConverter :
 		public IShapeToStringConverter

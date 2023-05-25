@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp RhombusParser kế thừa từ interface IParser thực hiện việc phân tích hình thoi
+	/// Class RhombusParser inherits from interface IParser and performs parsing for a rhombus
 	/// </summary>
 	class RhombusParser :
 		public IParser

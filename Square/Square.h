@@ -4,7 +4,7 @@
 extern "C" {
     namespace mySquare {
         /// <summary>
-        /// Lớp Square kế thừa từ interface IShape lưu thông tin hình vuông
+        /// Class Square inherits from interface IShape and save information about a square
         /// </summary>
         class Square :
             public IShape

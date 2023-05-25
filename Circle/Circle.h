@@ -4,7 +4,7 @@
 extern "C" {
 	namespace myCircle {
 		/// <summary>
-		/// Lớp Circle kế thừa từ interface IShape lưu thông tin hình tròn
+		/// Class Circle inherits from interface IShape and save information about a circle
 		/// </summary>
 		class Circle :
 			public IShape

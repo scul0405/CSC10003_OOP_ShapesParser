@@ -4,7 +4,7 @@
 extern "C" {
 	namespace myEllipse {
 		/// <summary>
-		/// Lớp Ellipse kế thừa từ interface IShape lưu thông tin hình e-líp
+		/// Class Ellipse inherits from interface IShape and save information about an ellipse
 		/// </summary>
 		class Ellipse :
 			public IShape

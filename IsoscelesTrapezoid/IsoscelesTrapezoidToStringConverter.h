@@ -4,8 +4,8 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp IsoscelesTrapezoidToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình tròn sang tập dữ liệu
+	/// Class IsoscelesTrapezoidToStringConverter inherits from interface IShapeToStringConverter and performs
+	/// converting an isosceles trapezoid information to a tuple.
 	/// </summary>
 	class IsoscelesTrapezoidToStringConverter :
 		public IShapeToStringConverter

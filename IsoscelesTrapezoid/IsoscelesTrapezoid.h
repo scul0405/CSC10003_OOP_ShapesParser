@@ -4,7 +4,7 @@
 extern "C" {
 	namespace myIsoscelesTrapezoid {
 		/// <summary>
-		/// Lớp IsoscelesTrapezoid kế thừa từ interface IShape lưu thông tin hình thang cân
+		/// Class IsoscelesTrapezoid inherits from interface IShape and save information about an isosceles trapezoid
 		/// </summary>
 		class IsoscelesTrapezoid :
 			public IShape

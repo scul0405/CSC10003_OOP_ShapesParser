@@ -4,7 +4,7 @@
 
 extern "C" {
 	/// <summary>
-	/// Lớp TriangleParser kế thừa từ interface IParser thực hiện việc phân tích hình tam giác
+	/// Class TriangleParser inherits from interface IParser and performs parsing for a triangle
 	/// </summary>
 	class TriangleParser :
 		public IParser
