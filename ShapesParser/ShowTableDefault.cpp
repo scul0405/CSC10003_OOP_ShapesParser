@@ -2,11 +2,12 @@
 
 void ShowTableDefault::showTable(vector<SHAPE_DATA> data)
 {
-	for (int i = 0; i < data.size(); i++) {
+	for (int i = 0; i < data.size(); i++)
+	{
 		wcout << left << "| " << setw(3)
-			<< to_wstring(i + 1);
+			  << to_wstring(i + 1);
 
-		const auto& [shapeName, shapeInfor, perimeter, area] = data[i];
+		const auto &[shapeName, shapeInfor, perimeter, area] = data[i];
 		wstringstream builder;
 
 		// cột tên
@@ -17,7 +18,7 @@ void ShowTableDefault::showTable(vector<SHAPE_DATA> data)
 		// cột thông tin
 		builder << " | ";
 		builder.fill(' ');
-		builder << left << setw(20) << shapeInfor;
+		builder << left << setw(45) << shapeInfor;
 
 		// cột chu vi
 		builder << " | ";

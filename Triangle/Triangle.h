@@ -11,13 +11,13 @@ extern "C" {
             public IShape
         {
             /// The length of the first edge of the triangle
-            double _first_edge;
+            double _firstEdge;
 
             /// The length of the second edge of the triangle
-            double _second_edge;
+            double _secondEdge;
 
             /// The length of the third edge of the triangle
-            double _third_edge;
+            double _thirdEdge;
 
         public:
             /**
@@ -50,19 +50,19 @@ extern "C" {
              * @brief Gets the length of the first edge of the triangle
              * @returns Length of the first edge of the triangle
              */
-            double first_edge();
+            double firstEdge();
 
             /**
              * @brief Gets the length of the second edge of the triangle
              * @returns Length of the second edge of the triangle
              */
-            double second_edge();
+            double secondEdge();
 
             /**
              * @brief Gets the length of the third edge of the triangle
              * @returns Length of the third edge of the triangle
              */
-            double third_edge();
+            double thirdEdge();
         };
     };
 }
