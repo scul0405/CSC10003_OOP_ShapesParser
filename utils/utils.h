@@ -36,17 +36,17 @@ using std::sort;
 using std::unique_ptr, std::shared_ptr, std::make_unique, std::make_shared;
 
 /// <summary>
-/// SHAPE_DATA là một tập dữ liệu lưu trữ 4 trường:
-///		- Tên hình
-///		- Thông tin của hình
-///		- Chu vi hình
-///		- Diện tích hình
+/// SHAPE_DATA is the data type defined to store the information of the IShape object:
+/// - name /n
+/// - attributes /n
+/// - perimeter /n
+/// - area 
 /// </summary>
 typedef tuple<wstring, wstring, wstring, wstring> SHAPE_DATA;
 
 const double PI = 3.1415;
 
 /// <summary> 
-///		DOUBLE_PATTERN dùng để kiểm tra một số có phải là số thực không
+/// DOUBLE_PATTERN is a regular expression that determines whether a string is a double value or not
 /// </summary>
 const regex DOUBLE_PATTERN("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");

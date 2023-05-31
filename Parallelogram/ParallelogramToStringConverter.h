@@ -1,18 +1,27 @@
 ﻿#pragma once
+
 #include "pch.h"
 #include "Parallelogram.h"
 
 extern "C" {
-	/// <summary>
-	/// Lớp ParallelogramToStringConverter kế thừa từ interface IShapeToStringConverter thực hiện việc chuyển đổi
-	/// thông tin hình bình hành sang tập dữ liệu
-	/// </summary>
+	/**
+	 * @brief ParallelogramToStringConverter class, which inherits from the IShapeToStringConverter interface and performs the task of converting parallelogram shape information to data set
+	 */
 	class ParallelogramToStringConverter :
 		public IShapeToStringConverter
 	{
 	public:
+		/**
+		 * @brief Converts a Parallelogram object to SHAPE_DATA format
+		 * @param Pointer to the Parallelogram object to be converted
+		 * @returns SHAPE_DATA formatted version of the Parallelogram object
+		 */
 		SHAPE_DATA convert(IShape*) override;
+
+		/**
+		 * @brief Returns a string representation of the ParallelogramToStringConverter object
+		 * @returns String representation of the ParallelogramToStringConverter object
+		 */
 		string toString() override;
 	};
 }
-

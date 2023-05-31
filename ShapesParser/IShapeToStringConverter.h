@@ -4,11 +4,16 @@
 #include "../utils/utils.h"
 
 /// <summary>
-/// Lớp giao diện của các lớp converter tương ứng của từng hình
+/// IShapeToStringConverter interface is used for declare methods for subclasses to implement
 /// </summary>
 class IShapeToStringConverter : public Object
 {
 public:
-	virtual SHAPE_DATA convert(IShape*) = 0;
+	/// <summary>
+	/// Method to convert IShape object to SHAPE_DATA data type
+	/// </summary>
+	/// <param name="shape">IShape object needs to be converted</param>
+	/// <returns>SHAPE_DATA data type of the input object</returns>
+	virtual SHAPE_DATA convert(IShape* shape) = 0;
 };
 

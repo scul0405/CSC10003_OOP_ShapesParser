@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 #include "../utils/utils.h"
 #include "../ShapesParser/IShape.h"
 #include "IShowTableBehavior.h"
@@ -7,73 +8,71 @@
 #include "ShowDataDefault.h"
 #include "Object.h"
 
-/// <summary>
-/// Lớp phụ trách việc in ra màn hình
-/// </summary>
+ /**
+  * @brief ShapesPrinter class, responsible for printing shapes to the screen
+  */
 class ShapesPrinter : public Object
 {
-	/// <summary>
-	/// vector lưu trữ các thông tin của các hình
-	/// </summary>
+private:
+	/// Vector storing information of the shapes
 	vector<SHAPE_DATA> _data;
 
-	/// <summary>
-	/// Xuất ra màn hình kiểu bảng
-	/// </summary>
+	/// Outputs in table format
 	IShowTableBehavior* _showTableBehavior;
 
-	/// <summary>
-	/// Xuất ra màn hình kiểu dữ liệu
-	/// </summary>
+	/// Outputs in data format
 	IShowDataBehavior* _showDataBehavior;
 public:
-	/// <summary>
-	/// Hàm tạo đối tượng
-	/// </summary>
+	/**
+	 * @brief Default constructor for ShapesPrinter class
+	 */
 	ShapesPrinter();
 
-	/// <summary>
-	/// Hàm cài đặt kiểu in dạng dữ liệu
-	/// </summary>
-	/// <param name=""></param>
+	/**
+	 * @brief Sets the behavior for showing data
+	 * @param The show data behavior
+	 */
 	void setShowDataBehavior(IShowDataBehavior*);
 
-	/// <summary>
-	/// Hàm định dạng cách in dữ liệu
-	/// </summary>
-	/// <param name=""></param>
+	/**
+	 * @brief Formats the way data is displayed
+	 * @param Vector containing shape data
+	 */
 	void performShowDataBehavior(vector<SHAPE_DATA>);
 
-	/// <summary>
-	/// Hàm cài đặt kiểu in dạng bảng
-	/// </summary>
-	/// <param name=""></param>
+	/**
+	 * @brief Sets the behavior for showing tables
+	 * @param The show table behavior
+	 */
 	void setShowTableBehavior(IShowTableBehavior*);
 
-	/// <summary>
-	/// Hàm định dạng cách in bảng
-	/// </summary>
-	/// <param name=""></param>
+	/**
+	 * @brief Formats the way tables are displayed
+	 * @param Vector containing shape data
+	 */
 	void performShowTableBehavior(vector<SHAPE_DATA>);
 
-	/// <summary>
-	/// Hàm thêm vào một đối tượng hình
-	/// </summary>
-	/// <param name=""></param>
+	/**
+	 * @brief Adds a shape object to the vector
+	 * @param Shape data
+	 */
 	void push(SHAPE_DATA);
 
-	/// <summary>
-	/// Hàm xóa các đối tượng
-	/// </summary>
-	/// <param name=""></param>
-	void clear(SHAPE_DATA);
+	/**
+	 * @brief Clears all shape objects from the vector
+	 * @param Shape data
+	 */
+	void clear();
 
-	/// <summary>
-	/// Hàm lấy các đối tượng hình đã được thêm váo
-	/// </summary>
-	/// <returns></returns>
+	/**
+	 * @brief Gets all the shape objects that have been added
+	 * @returns Vector containing all shape data
+	 */
 	vector<SHAPE_DATA> getData();
 
+	/**
+	 * @brief Returns a string representation of the ShapesPrinter object
+	 * @returns String representation of the ShapesPrinter object
+	 */
 	string toString() override;
 };
-
