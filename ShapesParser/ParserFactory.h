@@ -4,17 +4,35 @@
 #include "../utils/utils.h"
 #include "Object.h"
 
-/// <summary>
-/// Lớp lựa chọn việc tạo ra đối tượng parser thông qua mô hình nhà máy
-/// </summary>
+/**
+ * @brief Class to manage a list of prototypes for IParser objects.
+ */
 class ParserFactory : public Object
 {
     map<string, IParser*> _prototypes;
 public:
-
+    /**
+     * @brief Register a new prototype with the factory.
+     *
+     * @param type The name of the type of the prototype being registered.
+     * @param parser A pointer to the prototype object.
+     */
     void registerWith(string type, IParser* parser);
 
+    /**
+     * @brief Select a prototype from the factory based on its type.
+     *
+     * @param type The name of the type of the prototype being selected.
+     * @return A pointer to the selected prototype object. If no prototype is found with the given type, returns null.
+     */
     IParser* select(string type);
+
+    /**
+     * @brief Return a string representation of the list of prototypes registered with the factory.
+     *
+     * @return A string describing the list of prototypes registered with the factory.
+     */
     string toString() override;
 };
+
 

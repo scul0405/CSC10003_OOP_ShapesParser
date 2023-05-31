@@ -17,97 +17,97 @@
  */
 
 
-/// <summary>
-/// Hàm với chức năng cài đặt xuất chữ tiếng việt trên console
-/// </summary>
+ /// <summary>
+ /// Function to set Vietnamese character mode for console output
+ /// </summary>
 void setMode();
 
 /// <summary>
-/// Hàm với chức năng đọc file text
+/// Function to read text file and store shape objects in a vector
 /// </summary>
-/// <param name="textFile"> Tên của file text </param> 
-/// <param name="count"> Số lượng đối tượng hình được khai báo trong file </param> 
-/// <param name="shapes"> Vector lưu trữ các đối tượng hình </param>
-/// <param name="parser_factory"> Lựa chọn khởi tạo đối tượng qua việc parse </param>
+/// <param name="textFile">Name of the text file</param>
+/// <param name="count">Number of shape objects declared in the file</param>
+/// <param name="shapes">Vector to store shape objects</param>
+/// <param name="parser_factory">Parser factory to select object instantiation method through parsing</param>
 void readFile(wstring textFile, int& count, vector<shared_ptr<IShape>>& shapes, ParserFactory& parser_factory);
 
 /// <summary>
-/// Hàm với chức năng sắp xếp tăng dần các đối tượng theo diện tích
+/// Function to sort shape objects in ascending order of area
 /// </summary>
-/// <param name="shapes"> Vector chứa các đối tượng cần sắp xếp</param>
+/// <param name="shapes">Vector of shape objects to be sorted</param>
 void sortWithLambdaExpression(vector<shared_ptr<IShape>>& shapes);
 
 /// <summary>
-/// Hàm với chức năng nạp các đối tượng IShape sang đối tượng Printer để in ra màn hình
+/// Function to load IShape objects into a ShapesPrinter for printing
 /// </summary>
-/// <param name="printer">Đối tượng phụ trách việc in ra màn hình</param>
-/// <param name="shapes">Vector chứa các đối tượng hình</param>
-/// <param name="converter_factory">Lựa chọn khởi tạo đối tượng qua converter</param>
+/// <param name="printer">ShapesPrinter object that handles printing</param>
+/// <param name="shapes">Vector of shape objects to be printed</param>
+/// <param name="converter_factory">ConverterFactory to select object instantiation method through conversion</param>
 void loadShapesToPrinter(ShapesPrinter& printer, vector<shared_ptr<IShape>>& shapes, ConverterFactory& converter_factory);
 
 /// <summary>
-/// Hàm với chức năng thực hiện việc cài đặt kiểu in ra màn hình
+/// Function to set custom printing behavior for the ShapesPrinter object
 /// </summary>
-/// <param name="printer">Đối tượng phụ trách việc in ra màn hình</param>
-/// <param name="showDataBehavior">Kiểu in dữ liệu</param>
-/// <param name="showTableBehavior">Kiểu in bảng</param>
+/// <param name="printer">ShapesPrinter object that handles printing</param>
+/// <param name="showDataBehavior">Behavior for printing data</param>
+/// <param name="showTableBehavior">Behavior for printing table</param>
 void setCustomPrinter(ShapesPrinter& printer, IShowDataBehavior*& showDataBehavior, IShowTableBehavior*& showTableBehavior);
 
 /// <summary>
-/// Hàm phụ trách việc in ra màn hình
+/// Function to print shape objects to the console
 /// </summary>
-/// <param name="printer">Đối tượng phụ trách việc in ra màn hình</param>
-/// <param name="shapes">Vector chứa các đối tượng hình</param>
-/// <param name="count">Số lượng đối tượng hình được khai báo trong file</param>
+/// <param name="printer">ShapesPrinter object that handles printing</param>
+/// <param name="shapes">Vector of shape objects to be printed</param>
+/// <param name="count">Number of shape objects declared in the file</param>
 void printToScreen(ShapesPrinter& printer, vector<shared_ptr<IShape>>& shapes, int count);
 
 int main() {
-	// Khởi tạo đối tượng phụ trách việc in ra màn hình
+	// Initialize ShapesPrinter object for printing
 	ShapesPrinter printer;
 
-	// Khởi tạo đối tượng phụ trách việc lựa chọn khởi tạo qua việc parse
+	// Initialize ParserFactory object for selecting instantiation method through parsing
 	ParserFactory parser_factory;
 
-	// Khởi tạo đối tượng phụ trách việc lựa chọn khởi tạo qua converter
+	// Initialize ConverterFactory object for selecting instantiation method through conversion
 	ConverterFactory converter_factory;
 
-	// Khởi tạo vector lưu trữ các đối tượng hình trong file
+	// Vector to store shape objects read from file
 	vector<shared_ptr<IShape>> shapes;
 
-	// Tên của file text cần đọc
+	// Name of text file to be read
 	wstring textFile = L"shapes.txt";
 
-	// Khởi tạo biến lưu trữ số các đối tượng có mặt trong file
+	// Number of shape objects declared in the file
 	int count = 0;
 
-	// Khởi tạo các đối tượng là các phương thức để in ra màn hình
+	// Custom behaviors for printing data and table
 	IShowDataBehavior* showDataBehavior = new ShowDataCustom;
 	IShowTableBehavior* showTableBehavior = new ShowTableCustom;
 	
-	// Định nghĩa lại các con trỏ hàm
+	// Redefine function pointers
 	typedef IShapeToStringConverter* (__cdecl* FN_SHAPE_CONVERTER)();
 	typedef IParser* (__cdecl* FN_SHAPE_PARSER)();
 
 	FN_SHAPE_PARSER fn_parser = nullptr;
 	FN_SHAPE_CONVERTER fn_converter = nullptr;
 
-	// vector lưu trữ đường dẫn của các file .dll
-	vector<std::filesystem::path> dll_files; 
+	// Vector to store path of DLL files
+	vector<std::filesystem::path> dll_files;
 
-	// Đường dẫn hiện thời tới file .exe sau khi build
+	// Path to .exe file after building
 	const std::filesystem::path path_obj = std::filesystem::current_path();
 
-	// NHỚ XÓA CÁI NÀY TRƯỚC KHI NỘP VÀ ĐỔI Ở VÒNG FOR BÊN DƯỚI NHÉ
+	// TODO: MODIFY THIS PATH BEFORE SUBMISSION AND CHANGE TO FOR LOOP BELOW
 	const std::filesystem::path path_obj1("../x64/Debug");
 
-	// Vector lưu trữ các file .dll đã mở thành công
+	// Vector to store successfully opened DLL files
 	vector<shared_ptr<void>> hLibs;
 
-	// lưu lại các con trỏ handle
+	// Vectors to store handle pointers
 	vector<shared_ptr<IParser>> parser_ptrs;
 	vector<shared_ptr<IShapeToStringConverter>> converter_ptrs;
 
-	// Load các file .dll và lưu vào mảng
+	// Load DLL files and add them to the array
 	for (const auto& entry : std::filesystem::directory_iterator(path_obj1)) {
 		if (entry.path().extension() == ".dll") {
 			dll_files.push_back(entry.path());
@@ -116,23 +116,18 @@ int main() {
 
 	for (auto& dll_path : dll_files) {
 
-		// Mở file dll
+		// OPEN .DLL FILE 
 		HMODULE hDll = LoadLibrary(dll_path.c_str());
 
 		if (hDll != NULL) {
 
-			// Nếu mở file thành công thì thêm vào hLibs
-			// Đối số FreeLibrary biểu trưng cho việc nếu dll này không dùng
-			// thì tự động gọi đến hàm FreeLibrary để hủy cấp phát
 			hLibs.emplace_back(hDll, &FreeLibrary);
 
-			// Load lên hai hàm getParserInstance và getConverterInstance
-			// Mục đích: nếu có hài hàm này thì file hợp lệ
-			// Ứng vớ mỗi hàm này thì thực hiện khai báo cho các Factory 
+			// Get function pointers for parser and converter instantiation 
 			fn_parser = (FN_SHAPE_PARSER)GetProcAddress(hDll, "getParserInstance");
 			fn_converter = (FN_SHAPE_CONVERTER)GetProcAddress(hDll, "getConverterInstance");
 
-			/* Kiểm tra điều kiện để khai báo*/
+			// Create new instances of parser and converter using function pointers
 			if (fn_parser != NULL) {
 				auto instance = fn_parser();
 				string shapeName = dll_path.filename().stem().string();
@@ -155,17 +150,22 @@ int main() {
 	// Run program
 	setMode();
 
+	// Read shape objects from file
 	readFile(textFile, count, shapes, parser_factory);
 
+	// Sort shape objects by area in ascending order
 	sortWithLambdaExpression(shapes);
 
+	// Load shape objects into ShapesPrinter object for printing
 	loadShapesToPrinter(printer, shapes, converter_factory);
 
+	// Set custom behaviors for ShapesPrinter object
 	setCustomPrinter(printer, showDataBehavior, showTableBehavior);
-
+	
+	// Print shape objects to the console
 	printToScreen(printer, shapes, count);
 
-	// End
+	// Clear up
 	system("pause");
 	parser_ptrs.clear();
 	converter_ptrs.clear();
@@ -176,7 +176,7 @@ int main() {
 }
 
 void setMode() {
-	auto mode = _setmode(_fileno(stdout), _O_U16TEXT);	// in tiếng việt
+	auto mode = _setmode(_fileno(stdout), _O_U16TEXT);
 
 }
 

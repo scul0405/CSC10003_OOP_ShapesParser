@@ -3,21 +3,21 @@
 #include "../utils/utils.h"
 
 /// <summary>
-/// Lớp giao diện thể hiện cho các hình
+/// IShape interface is used for declare methods for subclasses to implement
 /// </summary>
 class IShape : public Object
 {
 public:
 	/// <summary>
-	/// Tính toán diện tích của hình
+	/// Get the area of an object
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The area of the object</returns>
 	virtual double area() = 0;
 
 	/// <summary>
-	/// Tính toán chu vi của hình
+	/// Get the perimeter of an object
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The perimeter of an object</returns>
 	virtual double perimeter() = 0;
 };
 

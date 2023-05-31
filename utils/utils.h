@@ -36,17 +36,17 @@ using std::sort;
 using std::unique_ptr, std::shared_ptr, std::make_unique, std::make_shared;
 
 /// <summary>
-/// SHAPE_DATA is a tuple save 4 fields:
-///		- shape name
-///		- shape information
-///		- perimeter of the shape
-///		- area of the shape
+/// SHAPE_DATA is the data type defined to store the information of the IShape object:
+/// - name /n
+/// - attributes /n
+/// - perimeter /n
+/// - area 
 /// </summary>
 typedef tuple<wstring, wstring, wstring, wstring> SHAPE_DATA;
 
 const double PI = 3.1415;
 
 /// <summary> 
-///		DOUBLE_PATTERN is a regular expression to check if a string is a number type double or not
+/// DOUBLE_PATTERN is a regular expression that determines whether a string is a double value or not
 /// </summary>
 const regex DOUBLE_PATTERN("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)");

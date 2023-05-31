@@ -32,7 +32,7 @@ void ShapesPrinter::push(SHAPE_DATA other)
 	_data.push_back(other);
 }
 
-void ShapesPrinter::clear(SHAPE_DATA)
+void ShapesPrinter::clear()
 {
 	_data.clear();
 }
