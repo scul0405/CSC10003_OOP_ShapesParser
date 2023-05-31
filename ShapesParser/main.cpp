@@ -98,7 +98,7 @@ int main() {
 	const std::filesystem::path path_obj = std::filesystem::current_path();
 
 	// TODO: MODIFY THIS PATH BEFORE SUBMISSION AND CHANGE TO FOR LOOP BELOW
-	const std::filesystem::path path_obj1("../x64/Debug");
+	const std::filesystem::path path_obj1("../x64/Release");
 
 	// Vector to store successfully opened DLL files
 	vector<shared_ptr<void>> hLibs;

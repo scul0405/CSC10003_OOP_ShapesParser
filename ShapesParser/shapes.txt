@@ -1,3 +1,12 @@
-1
+10
 Triangle: a=4, b=5, c=6
+Rectangle: w=4, h=6
+ABC: www
+Square: a = 4
+Rhombus: long = 10, short = 6
+Parallelogram: side = 5, base = 8, height = 4
+Circle: r = 8
+IsoscelesTrapezoid: top= 5, base = 8, height = 4
+Ellipse: semi_minor_axis = 6, semi_major_axis = 10
+XYZ: www = 4
 

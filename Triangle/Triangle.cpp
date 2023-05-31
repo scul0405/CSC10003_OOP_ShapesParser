@@ -19,20 +19,20 @@ myTriangle::Triangle::Triangle(double firstEgde, double secondEdge, double third
         throw exception("Three edges cannot be a triangle.");
     }
 
-    _firstEgde = firstEgde;
-    _secondEgde = secondEdge;
-    _thirdEgde = thirdEdge;
+    _first_edge = firstEgde;
+    _second_edge = secondEdge;
+    _third_edge = thirdEdge;
 }
 
 double myTriangle::Triangle::area()
 {
-    double p = (_firstEgde + _secondEgde + _thirdEgde) / 2;
-    return sqrt(p*(p - _firstEgde)*(p - _secondEgde)*(p - _thirdEgde));
+    double p = (_first_edge + _second_edge + _third_edge) / 2;
+    return sqrt(p*(p - _first_edge)*(p - _second_edge)*(p - _third_edge));
 }
 
 double myTriangle::Triangle::perimeter()
 {
-    return (_firstEgde + _secondEgde + _thirdEgde);
+    return (_first_edge + _second_edge + _third_edge);
 }
 
 string myTriangle::Triangle::toString()
@@ -40,17 +40,17 @@ string myTriangle::Triangle::toString()
     return "Triangle";
 }
 
-double myTriangle::Triangle::firstEgde()
+double myTriangle::Triangle::first_edge()
 {
-    return (_firstEgde);
+    return (_first_edge);
 }
 
-double myTriangle::Triangle::secondEgde()
+double myTriangle::Triangle::second_edge()
 {
-    return (_secondEgde);
+    return (_second_edge);
 }
 
-double myTriangle::Triangle::thirdEgde()
+double myTriangle::Triangle::third_edge()
 {
-    return (_thirdEgde);
+    return (_third_edge);
 }

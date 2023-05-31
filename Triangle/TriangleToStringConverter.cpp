@@ -8,9 +8,9 @@ SHAPE_DATA TriangleToStringConverter::convert(IShape* shape)
 
 	wstring shapeName = L"Hình tam giác";
 
-	*builder << L"Cạnh 1=" << triangle->firstEgde()
-		<< L", Cạnh 2=" << triangle->secondEgde()
-		<< L", Cạnh 3=" << triangle->thirdEgde();
+	*builder << L"Cạnh 1=" << triangle->first_edge()
+		<< L", Cạnh 2=" << triangle->second_edge()
+		<< L", Cạnh 3=" << triangle->third_edge();
 	wstring attributes(builder->str());
 
 	//reset 
